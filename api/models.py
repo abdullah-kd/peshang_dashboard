@@ -1,5 +1,5 @@
 from django.db import models
-
+from tinymce import models as tinymce_models
 # Create your models here.
 
 
@@ -66,7 +66,7 @@ class Activity(models.Model):
 
     title =  models.CharField(max_length=200)
  
-    discreption = models.TextField()
+    discreption = tinymce_models.HTMLField()
     date = models.DateField()
     imageTitle = models.ImageField(blank=True,upload_to='blog_images')
     imageOne = models.ImageField(blank=True, upload_to='blog_images')
